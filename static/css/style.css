@@ -163,4 +163,14 @@ strong{
 	background-color: #F2E8E4;
 }
 
-/* end of about page */
+/* member profile page */
+.jumbotron-memberpage {
+	text-align:left;
+	margin: auto;
+	padding: 10px 10px 10px 10px;
+	background-color: #F2E8E4;
+}
+.memberprofile_list {
+	list-style-type: none;
+	font-size: 20px;
+}

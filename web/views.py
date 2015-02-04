@@ -1,5 +1,6 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render
+from api.models import UserProfile
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -27,3 +28,7 @@ def links(request):
 
 def edituser(request):
 	return render(request, 'pages/edituser.html',{})
+
+def memberpage(request):
+	#user = UserProfile.objects.get(user="PettraV")
+	return render(request, 'pages/memberpage.html',{"UserProfile": UserProfile})

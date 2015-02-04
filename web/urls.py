@@ -14,4 +14,5 @@ urlpatterns = patterns('',
 	url(r'^login/$', views.login, name='pages-login'),
 	url(r'^links/$', views.links, name='pages-links'),
 	url(r'^edituser/$', views.edituser, name='pages-edituser'),
+	url(r'^memberpage/$', views.memberpage, name='pages-memberpage'),
 )
