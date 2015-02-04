@@ -30,5 +30,5 @@ def edituser(request):
 	return render(request, 'pages/edituser.html',{})
 
 def memberpage(request):
-	#user = UserProfile.objects.get(user="PettraV")
-	return render(request, 'pages/memberpage.html',{"UserProfile": UserProfile})
+	user = UserProfile.objects.get(githubuser="PettraV")
+	return render(request, 'pages/memberpage.html',{"user": user})

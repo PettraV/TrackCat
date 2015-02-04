@@ -157,10 +157,13 @@ strong{
 	float:top;
 }
 
-.jumbotron{
+.jumbotron {
 	text-align:center;
 	margin: auto;
 	background-color: #F2E8E4;
+}
+.jumbotron p {
+	font-size: 12px;
 }
 
 /* member profile page */
