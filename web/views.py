@@ -1,12 +1,13 @@
 from django.template import RequestContext
-from django.shortcuts import render_to_response, render
-from api.models import UserProfile
+from django.shortcuts import render_to_response, render, get_object_or_404
+from api.models import Project, UserProfile
 
 def index(request):
 	return render_to_response('pages/index.html',{})
 
 def projects(request):
-	return render(request, 'pages/projects.html',{})
+	project_list = Project.objects.all()
+	return render(request, 'pages/projects.html',{'project_list': project_list})
 
 def about(request):
 	return render(request, 'pages/about.html',{})
@@ -29,6 +30,13 @@ def links(request):
 def edituser(request):
 	return render(request, 'pages/edituser.html',{})
 
-def memberpage(request):
+def member_page(request):
 	user = UserProfile.objects.get(githubuser="PettraV")
-	return render(request, 'pages/memberpage.html',{"user": user})
+	return render(request, 'pages/member_page.html',{"user": user})
+
+def privacy(request):
+	return render(request, 'pages/privacy.html',{})
+
+def project_detail(request,project_id):
+	project = get_object_or_404(Project, project_id=project_id)
+	return render(request, 'pages/project_detail.html', {'project': project})
