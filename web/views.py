@@ -30,13 +30,15 @@ def links(request):
 def edituser(request):
 	return render(request, 'pages/edituser.html',{})
 
-def member_page(request):
-	user = UserProfile.objects.get(githubuser="PettraV")
-	return render(request, 'pages/member_page.html',{"user": user})
-
 def privacy(request):
 	return render(request, 'pages/privacy.html',{})
 
 def project_detail(request,project_id):
 	project = get_object_or_404(Project, project_id=project_id)
 	return render(request, 'pages/project_detail.html', {'project': project})
+
+def member_page(request):
+	userc = UserProfile.objects.get(githubuser="PettraV")
+	return render(request, 'pages/member_page.html',{'user': userc})
+
+
